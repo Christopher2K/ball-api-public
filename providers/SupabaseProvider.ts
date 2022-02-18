@@ -1,6 +1,6 @@
+import { createClient } from "@supabase/supabase-js";
+
 import { ApplicationContract } from "@ioc:Adonis/Core/Application";
-import { initializeApp } from "firebase-admin/app";
-import { getAuth } from "firebase-admin/auth";
 
 /*
 |--------------------------------------------------------------------------
@@ -21,15 +21,18 @@ import { getAuth } from "firebase-admin/auth";
 | }
 |
 */
-export default class FirebaseProvider {
+export default class SupabaseProvider {
   constructor(protected app: ApplicationContract) {}
 
   public register() {
     const Env = this.app.container.resolveBinding("Adonis/Core/Env");
-    initializeApp();
 
-    const auth = getAuth();
-    this.app.container.singleton("Firebase/Auth", () => auth);
+    const supabaseClient = createClient(
+      Env.get("SUPABASE_URL"),
+      Env.get("SUPABASE_SERVICE_KEY")
+    );
+
+    this.app.container.singleton("Supabase/Auth", () => supabaseClient.auth);
 
     // Register your own bindings
   }

@@ -23,9 +23,9 @@ export default Env.rules({
   DRIVE_DISK: Env.schema.enum(["local"] as const),
   NODE_ENV: Env.schema.enum(["development", "production", "testing"] as const),
 
-  // Firebase
-  FIREBASE_AUTH_EMULATOR_HOST: Env.schema.string.optional(),
-  GCLOUD_PROJECT: Env.schema.string(),
+  // Supabase
+  SUPABASE_URL: Env.schema.string(),
+  SUPABASE_SERVICE_KEY: Env.schema.string(),
 
   // Database - Lucid addon
   DB_CONNECTION: Env.schema.string(),

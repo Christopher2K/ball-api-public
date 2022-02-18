@@ -20,7 +20,7 @@
   "providers": [
     "./providers/AppProvider",
     "@adonisjs/core",
-    "./providers/FirebaseProvider",
+    "./providers/SupabaseProvider",
     "@adonisjs/lucid"
   ],
   "aceProviders": [
