@@ -12,12 +12,13 @@ export default class User extends BaseModel {
   @column()
   public email: string;
 
-  @hasOne(() => Profile)
-  public profile: HasOne<typeof Profile>;
-
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime;
+
+  // Relationships
+  @hasOne(() => Profile)
+  public profile: HasOne<typeof Profile>;
 }

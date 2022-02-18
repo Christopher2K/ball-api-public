@@ -31,8 +31,8 @@ export default class Profile extends BaseModel {
   @column()
   public avatarUrl: string | null;
 
-  @belongsTo(() => User)
-  public user: BelongsTo<typeof User>;
+  @column()
+  public userId: string;
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;
@@ -40,6 +40,11 @@ export default class Profile extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime;
 
+  // Relationship object
+  @belongsTo(() => User)
+  public user: BelongsTo<typeof User>;
+
+  // Hooks
   @beforeCreate()
   public static assignUuid(profile: Profile) {
     profile.id = uuidv4();
