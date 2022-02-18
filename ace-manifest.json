@@ -1,5 +1,32 @@
 {
   "commands": {
+    "get:user_token": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/GetUserToken",
+      "commandName": "get:user_token",
+      "description": "Get user's JWT token from Supabase",
+      "args": [
+        {
+          "type": "string",
+          "propertyName": "email",
+          "name": "email",
+          "required": true,
+          "description": "User email"
+        },
+        {
+          "type": "string",
+          "propertyName": "password",
+          "name": "password",
+          "required": true,
+          "description": "User password"
+        }
+      ],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",
