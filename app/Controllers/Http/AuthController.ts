@@ -1,6 +1,7 @@
 import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 
 import SupabaseAuth from "@ioc:Supabase/Auth";
+import Env from "@ioc:Adonis/Core/Env";
 
 import SignUpValidator from "App/Validators/SignUpValidator";
 import User from "App/Models/User";
@@ -13,6 +14,7 @@ export default class AuthController {
     const supabaseUser = await SupabaseAuth.api.createUser({
       email: payload.email,
       password: payload.password,
+      email_confirm: Env.get("NODE_ENV") !== "production",
     });
 
     if (supabaseUser.user) {
@@ -33,8 +35,4 @@ export default class AuthController {
       response.badRequest();
     }
   }
-
-  public async login() {}
-
-  public async logout() {}
 }

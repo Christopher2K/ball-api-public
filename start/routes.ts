@@ -28,5 +28,3 @@ Route.get("health", async ({ response }: HttpContextContract) => {
 });
 
 Route.post("auth/signup", "AuthController.signUp");
-Route.post("auth/login", "AuthController.login");
-Route.post("auth/logout", "AuthController.logout");

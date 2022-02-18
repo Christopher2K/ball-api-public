@@ -26,6 +26,7 @@ export default Env.rules({
   // Supabase
   SUPABASE_URL: Env.schema.string(),
   SUPABASE_SERVICE_KEY: Env.schema.string(),
+  SUPABASE_JWT_SECRET: Env.schema.string(),
 
   // Database - Lucid addon
   DB_CONNECTION: Env.schema.string(),
