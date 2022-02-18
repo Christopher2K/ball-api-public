@@ -1,4 +1,4 @@
-import uuid from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { DateTime } from "luxon";
 
 import Hash from "@ioc:Adonis/Core/Hash";
@@ -49,7 +49,7 @@ export default class User extends BaseModel {
 
   @beforeCreate()
   public static assignUuid(user: User) {
-    user.id = uuid.v4();
+    user.id = uuidv4();
   }
 
   @beforeSave()

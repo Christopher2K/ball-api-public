@@ -5,6 +5,8 @@ coverage
 .DS_STORE
 .env
 tmp
+yarn-error.log
 
 # Firebase
 ui-debug.log
+firebase-debug.log
