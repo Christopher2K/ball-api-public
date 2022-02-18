@@ -14,7 +14,7 @@ export default class AuthController {
     const supabaseUser = await SupabaseAuth.api.createUser({
       email: payload.email,
       password: payload.password,
-      email_confirm: Env.get("NODE_ENV") !== "production",
+      email_confirm: !Env.get("NEED_EMAIL_CONFIRM"),
     });
 
     if (supabaseUser.user) {
