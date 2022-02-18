@@ -7,6 +7,9 @@ export default class Users extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.uuid("id").primary();
 
+      table.string("firebase_uid").unique({
+        indexName: "users_firebase_id_index",
+      });
       table.string("username", 20).unique({
         indexName: "users_username_index",
       });

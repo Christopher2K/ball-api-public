@@ -1,12 +1,22 @@
 import uuid from "uuid";
 import { DateTime } from "luxon";
-import { BaseModel, beforeCreate, column } from "@ioc:Adonis/Lucid/Orm";
+
+import Hash from "@ioc:Adonis/Core/Hash";
+import {
+  BaseModel,
+  beforeCreate,
+  beforeSave,
+  column,
+} from "@ioc:Adonis/Lucid/Orm";
 
 export default class User extends BaseModel {
   public static selfAssignPrimaryKey = true;
 
   @column({ isPrimary: true })
   public id: string;
+
+  @column()
+  public firebaseId: string;
 
   @column()
   public username: string;
@@ -40,5 +50,12 @@ export default class User extends BaseModel {
   @beforeCreate()
   public static assignUuid(user: User) {
     user.id = uuid.v4();
+  }
+
+  @beforeSave()
+  public static async hashPassword(user: User) {
+    if (user.$dirty.password && !user.password.startsWith("$argon")) {
+      user.password = await Hash.make(user.password);
+    }
   }
 }
