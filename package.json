@@ -8,7 +8,8 @@
     "start": "node build/server.js",
     "test": "node -r @adonisjs/assembler/build/register -r tsconfig-paths/register test.ts",
     "ace": "node -r tsconfig-paths/register ace",
-    "deploy": "node -r ts-node/register/transpile-only -r dotenv/config deploy.ts"
+    "deploy": "node -r ts-node/register/transpile-only -r dotenv/config deploy.ts",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@adonisjs/assembler": "5.3.0",
@@ -21,6 +22,7 @@
     "execa": "5.1.1",
     "get-port": "5.1.1",
     "japa": "4.0.0",
+    "patch-package": "6.4.7",
     "pino-pretty": "7.5.1",
     "supertest": "6.2.2",
     "ts-node": "10.6.0",

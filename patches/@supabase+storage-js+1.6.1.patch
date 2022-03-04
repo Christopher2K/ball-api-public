@@ -1,0 +1,10 @@
+diff --git a/node_modules/@supabase/storage-js/src/lib/StorageFileApi.ts b/node_modules/@supabase/storage-js/src/lib/StorageFileApi.ts
+index 75ac096..60f2510 100644
+--- a/node_modules/@supabase/storage-js/src/lib/StorageFileApi.ts
++++ b/node_modules/@supabase/storage-js/src/lib/StorageFileApi.ts
+@@ -1,5 +1,4 @@
+ import { Fetch, FetchParameters, get, post, remove } from './fetch'
+-import { isBrowser } from './helpers'
+ import { FileObject, FileOptions, SearchOptions } from './types'
+ import fetch from 'cross-fetch'
+ 
