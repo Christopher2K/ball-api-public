@@ -10,7 +10,7 @@ import {
   supabaseLocalStop,
   runMigrations,
   resetSupabaseDb,
-} from "./tests/utils";
+} from "utils/tests";
 
 process.env.NODE_ENV = "testing";
 process.env.ADONIS_ACE_CWD = join(__dirname);

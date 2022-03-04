@@ -33,6 +33,10 @@ export default class SupabaseProvider {
     );
 
     this.app.container.singleton("Supabase/Auth", () => supabaseClient.auth);
+    this.app.container.singleton(
+      "Supabase/Storage",
+      () => supabaseClient.storage
+    );
 
     // Register your own bindings
   }

@@ -1,7 +1,7 @@
 import test from "japa";
 import supertest from "supertest";
 
-import { getBaseUrl } from "tests/utils";
+import { getBaseUrl } from "utils/tests";
 import UserAlreadyExistException from "App/Exceptions/UserAlreadyExistException";
 import UsernameAlreadyTakenException from "App/Exceptions/UsernameAlreadyTakenException";
 

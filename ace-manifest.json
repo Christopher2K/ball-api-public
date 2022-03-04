@@ -27,6 +27,30 @@
       "aliases": [],
       "flags": []
     },
+    "supabase:clear": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/SupabaseClear",
+      "commandName": "supabase:clear",
+      "description": "Entirely clear supabase - DO NOT RUN THIS COMMAND IN THE PRODUCTION ENVIRONEMENT",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
+    "supabase:init": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/SupabaseInit",
+      "commandName": "supabase:init",
+      "description": "Spin up a new supabase environement - DO NOT RUN THIS COMMAND IN THE PRODUCTION ENVIRONEMENT",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",
