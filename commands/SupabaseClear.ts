@@ -1,6 +1,6 @@
 import { BaseCommand } from "@adonisjs/core/build/standalone";
 
-import { removeAllStorageBuckets } from "utils/commands";
+import { removeAllStorageBuckets } from "../utils/commands";
 
 export default class SupabaseClear extends BaseCommand {
   /**

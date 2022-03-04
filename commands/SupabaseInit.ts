@@ -1,6 +1,6 @@
 import { BaseCommand } from "@adonisjs/core/build/standalone";
 
-import { createStorageBuckets } from "utils/commands";
+import { createStorageBuckets } from "../utils/commands";
 
 export default class SupabaseInit extends BaseCommand {
   /**

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
-    "start": "node server.js",
+    "start": "node build/server.js",
     "test": "node -r @adonisjs/assembler/build/register -r tsconfig-paths/register test.ts",
     "ace": "node -r tsconfig-paths/register ace",
     "deploy": "node -r ts-node/register/transpile-only -r dotenv/config deploy.ts"
