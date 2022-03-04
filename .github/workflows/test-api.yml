@@ -1,0 +1,31 @@
+name: test-api
+on: [push]
+jobs:
+  test-api:
+    runs-on: ubuntu-18.04
+    env:
+      SUPABASE_VERSION: 0.18.1
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download Supabase
+        run: wget "https://github.com/supabase/cli/releases/download/v0.18.1/supabase_${SUPABASE_VERSION}_linux_amd64.deb"
+
+      - name: Install Supabase
+        run: sudo dpkg -i "supabase_${SUPABASE_VERSION}_linux_amd64.deb"
+
+      - name: Create empty Supabase migrate folder
+        run: mkdir -p ./supabase/migrations
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Test the API
+        run: yarn test
